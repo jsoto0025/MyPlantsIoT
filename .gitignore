@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/SmartPlants/.vs/SmartPlants/DesignTimeBuild
+/SmartPlants/.vs/SmartPlants/v16
+/SmartPlants/SmartPlantsMvc/bin/Debug/netcoreapp2.2
+/SmartPlants/SmartPlantsMvc/obj/Debug/netcoreapp2.2
+/SmartPlants/SmartPlantsMvc/obj
+/SmartPlants/SmartPlantsMvc/wwwroot/lib/bootstrap
