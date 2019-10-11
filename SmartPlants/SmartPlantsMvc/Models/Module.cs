@@ -9,15 +9,16 @@ namespace SmartPlantsMvc.Models
     /// </summary>
     public class Module
     {
-        public int Id { get; set; }
+        [Key]
+        public int ModuleId { get; set; }
         [ForeignKey("Farm")]
-        public int FarmId
-        {get;set;}
+        public int FarmId{get;set;}
+        [ForeignKey("FarmId")]
         public virtual Farm Farm { get; set; }
-        [ForeignKey("PlantType")]
-        public int PlantTypeId
-        { get; set; }
-        public virtual PlantType PlantType { get; set; }
+        
+        public int PlantTypeId{ get; set; }
+        [ForeignKey("PlantTypeId")]
+        public PlantType PlantType { get; set; }
 
     }
 }

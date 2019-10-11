@@ -11,7 +11,8 @@ namespace SmartPlantsMvc.Models
         /// <summary>
         /// Identificador unico requerido por el modelo
         /// </summary>
-        public int Id { get; set; }
+        [Key]
+        public int FarmId { get; set; }
         /// <summary>
         /// Nombre de la granja o razón social
         /// </summary>

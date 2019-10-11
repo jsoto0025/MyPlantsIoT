@@ -11,7 +11,8 @@ namespace SmartPlantsMvc.Models
         /// <summary>
         /// Identificador único del tipo de planta
         /// </summary>
-        public int Id { get; set; }
+        [Key]
+        public int PlantTypeId { get; set; }
         /// <summary>
         /// Nombre del tipo de planta
         /// </summary>
