@@ -18,5 +18,7 @@ namespace SmartPlantsMvc.Data
         public DbSet<PlantType> PlantTypes { get; set; }
 
         public DbSet<Module> Modules { get; set; }
+
+        public DbSet<Reservoir> Reservoirs { get; set; } 
     }
 }
