@@ -34,7 +34,7 @@ namespace SmartPlantsMvc.Controllers
             }
 
             var farm = await _context.Farms
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.FarmId == id);
             if (farm == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace SmartPlantsMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Nit")] Farm farm)
         {
-            if (id != farm.Id)
+            if (id != farm.FarmId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SmartPlantsMvc.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FarmExists(farm.Id))
+                    if (!FarmExists(farm.FarmId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SmartPlantsMvc.Controllers
             }
 
             var farm = await _context.Farms
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.FarmId == id);
             if (farm == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace SmartPlantsMvc.Controllers
 
         private bool FarmExists(int id)
         {
-            return _context.Farms.Any(e => e.Id == id);
+            return _context.Farms.Any(e => e.FarmId == id);
         }
     }
 }

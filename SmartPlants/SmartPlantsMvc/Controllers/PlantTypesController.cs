@@ -34,7 +34,7 @@ namespace SmartPlantsMvc.Controllers
             }
 
             var plantType = await _context.PlantTypes
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.PlantTypeId == id);
             if (plantType == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace SmartPlantsMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] PlantType plantType)
         {
-            if (id != plantType.Id)
+            if (id != plantType.PlantTypeId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SmartPlantsMvc.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PlantTypeExists(plantType.Id))
+                    if (!PlantTypeExists(plantType.PlantTypeId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SmartPlantsMvc.Controllers
             }
 
             var plantType = await _context.PlantTypes
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.PlantTypeId == id);
             if (plantType == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace SmartPlantsMvc.Controllers
 
         private bool PlantTypeExists(int id)
         {
-            return _context.PlantTypes.Any(e => e.Id == id);
+            return _context.PlantTypes.Any(e => e.PlantTypeId == id);
         }
     }
 }
