@@ -16,6 +16,7 @@ namespace SmartPlantsMvc.Models
         /// Capacidad en litros del reservorio
         /// </summary>
         [DefaultValue(50)]
+        [Range(0,50)]
         [Required]
         public int Capacity { get; set; }
     }
