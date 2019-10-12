@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SmartPlantsMvc.Models
@@ -16,10 +17,14 @@ namespace SmartPlantsMvc.Models
         /// <summary>
         /// Nombre de la granja o razón social
         /// </summary>
+        [Required]
         public string Name { get; set; }
         /// <summary>
         /// Nit de la granja
         /// </summary>
+        [Required]
         public string Nit { get; set; }
+
+
     }
 }

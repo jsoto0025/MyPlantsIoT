@@ -16,10 +16,12 @@ namespace SmartPlantsMvc.Models
         /// <summary>
         /// Nombre del tipo de planta
         /// </summary>
+        [Required]
         public string Name { get; set; }
         /// <summary>
         /// Descripción del tipo de planta
         /// </summary>
+        [Required]
         public string Description { get; set; }
     }
 }
