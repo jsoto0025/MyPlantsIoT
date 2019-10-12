@@ -57,7 +57,7 @@ namespace SmartPlantsMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReservoirId,ModuleId")] Reservoir reservoir)
+        public async Task<IActionResult> Create([Bind("ReservoirId,ModuleId,Capacity")] Reservoir reservoir)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace SmartPlantsMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReservoirId,ModuleId")] Reservoir reservoir)
+        public async Task<IActionResult> Edit(int id, [Bind("ReservoirId,ModuleId,Capacity")] Reservoir reservoir)
         {
             if (id != reservoir.ReservoirId)
             {
