@@ -12,3 +12,9 @@
 /SmartPlants/SmartPlantsMvc/wwwroot/lib/jquery
 /SmartPlants/SmartPlantsMvc/wwwroot/lib/jquery-validation
 /SmartPlants/SmartPlantsMvc/wwwroot/lib/jquery-validation-unobtrusive
+/CoreTutorials/.vs/CoreTutorials/v16
+/CoreTutorials/TodoApi/bin/Debug/netcoreapp3.0
+/CoreTutorials/TodoApi/obj
+/CoreTutorials/.vs
+/CoreTutorials/TodoApi/TodoApi.csproj.user
+/CoreTutorials/TodoApi/appsettings.Development.json
