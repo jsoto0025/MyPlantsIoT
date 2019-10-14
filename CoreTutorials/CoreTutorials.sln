@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApi", "TodoApi\TodoApi.csproj", "{BBA2FCE3-F01C-4552-A3D9-E336481A523D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi\TodoApi.csproj", "{BBA2FCE3-F01C-4552-A3D9-E336481A523D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularSPA", "AngularSPA\AngularSPA.csproj", "{CDFC480B-10AA-4740-BAF8-061044B1EF20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BBA2FCE3-F01C-4552-A3D9-E336481A523D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBA2FCE3-F01C-4552-A3D9-E336481A523D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBA2FCE3-F01C-4552-A3D9-E336481A523D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
