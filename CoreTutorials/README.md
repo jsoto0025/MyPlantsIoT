@@ -12,3 +12,4 @@ No compila el proyecto con Visual Studio 2019 16.4 Preview 1.
 
 [Tutorial: Call an ASP.NET Core web API with JavaScript](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-3.0)
 
+[Use the Angular project template with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/angular?view=aspnetcore-3.0&tabs=visual-studio)
