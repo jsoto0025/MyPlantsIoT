@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi\TodoApi.csproj", "{BBA2FCE3-F01C-4552-A3D9-E336481A523D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularSPA", "AngularSPA\AngularSPA.csproj", "{CDFC480B-10AA-4740-BAF8-061044B1EF20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularSPA", "AngularSPA\AngularSPA.csproj", "{CDFC480B-10AA-4740-BAF8-061044B1EF20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{40275E27-38F2-413F-A686-B41119886602}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFC480B-10AA-4740-BAF8-061044B1EF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40275E27-38F2-413F-A686-B41119886602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40275E27-38F2-413F-A686-B41119886602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40275E27-38F2-413F-A686-B41119886602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40275E27-38F2-413F-A686-B41119886602}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

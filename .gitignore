@@ -19,3 +19,6 @@
 /CoreTutorials/TodoApi/TodoApi.csproj.user
 /CoreTutorials/TodoApi/appsettings.Development.json
 /CoreTutorials/AngularSPA/.vscode
+/CoreTutorials/SignalRChat/bin
+/CoreTutorials/SignalRChat/obj
+/CoreTutorials/SignalRChat/wwwroot/lib
