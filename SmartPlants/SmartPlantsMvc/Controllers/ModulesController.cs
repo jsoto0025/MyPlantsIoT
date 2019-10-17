@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SmartPlantsMvc.Data;
-using SmartPlantsMvc.Models;
+using SmartPlants.Models;
 
 namespace SmartPlantsMvc.Controllers
 {
@@ -59,7 +60,7 @@ namespace SmartPlantsMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ModuleId,FarmId,PlantTypeId")] Module @module)
+        public async Task<IActionResult> Create([Bind("ModuleId,FarmId,PlantTypeId")] SmartPlants.Models.Module @module)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +96,7 @@ namespace SmartPlantsMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ModuleId,FarmId,PlantTypeId")] Module @module)
+        public async Task<IActionResult> Edit(int id, [Bind("ModuleId,FarmId,PlantTypeId")] SmartPlants.Models.Module @module)
         {
             if (id != @module.ModuleId)
             {

@@ -2,29 +2,27 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace SmartPlantsMvc.Models
+namespace SmartPlants.Models
 {
     /// <summary>
-    /// Clase POCO de los objetos Granja (Farm)
+    /// Objeto POCO que representa el tipo de plantas en un cultivo hidrofónico.
     /// </summary>
-    public class Farm
+    public class PlantType
     {
         /// <summary>
-        /// Identificador unico requerido por el modelo
+        /// Identificador único del tipo de planta
         /// </summary>
         [Key]
-        public int FarmId { get; set; }
+        public int PlantTypeId { get; set; }
         /// <summary>
-        /// Nombre de la granja o razón social
+        /// Nombre del tipo de planta
         /// </summary>
         [Required]
         public string Name { get; set; }
         /// <summary>
-        /// Nit de la granja
+        /// Descripción del tipo de planta
         /// </summary>
         [Required]
-        public string Nit { get; set; }
-
-
+        public string Description { get; set; }
     }
 }

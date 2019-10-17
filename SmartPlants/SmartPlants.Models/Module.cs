@@ -1,8 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SmartPlantsMvc.Models
+namespace SmartPlants.Models
 {
     /// <summary>
     /// Objeto POCO de un módulo de una granja hidrofonica
@@ -12,11 +13,11 @@ namespace SmartPlantsMvc.Models
         [Key]
         public int ModuleId { get; set; }
         [ForeignKey("Farm")]
-        public int FarmId{get;set;}
+        public int FarmId { get; set; }
         [ForeignKey("FarmId")]
         public virtual Farm Farm { get; set; }
-        
-        public int PlantTypeId{ get; set; }
+
+        public int PlantTypeId { get; set; }
         [ForeignKey("PlantTypeId")]
         public PlantType PlantType { get; set; }
 

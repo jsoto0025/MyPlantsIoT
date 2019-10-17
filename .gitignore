@@ -22,3 +22,6 @@
 /CoreTutorials/SignalRChat/bin
 /CoreTutorials/SignalRChat/obj
 /CoreTutorials/SignalRChat/wwwroot/lib
+/SmartPlants/SmartPlants.Models/bin/Debug
+/SmartPlants/SmartPlants.Models/obj
+/SmartPlants/SmartPlantsMvc/wwwroot/lib/signalr
