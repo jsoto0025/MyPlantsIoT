@@ -15,12 +15,15 @@
 #define ULTRASONICTRINGPIN 9
 #define ULTRASONICECHOPIN 10
 #define DHT11PIN 7
+#define FANPIN1 11
+#define FANPIN2 12
 
 //Constants declaration
 #define SERVOOPENEDANGLE 0
 #define SERVOCLOSEDEANGLE 50
-#define MINWATERDISTANCE 10
+#define MINWATERDISTANCE 6
 #define MAXTEMPERATURE 24
+
 
 //Variables declaration
 unsigned int state = SSOFOFF;
@@ -53,17 +56,19 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(ULTRASONICTRINGPIN, OUTPUT); // Sets the ULTRASONICTRINGPIN as an Output
   pinMode(ULTRASONICECHOPIN, INPUT); // Sets the ULTRASONICECHOPIN as an Input
+  pinMode(FANPIN1, OUTPUT);
+  pinMode(FANPIN2, OUTPUT);
   servo.attach(SERVOPIN);
   tini = millis();
   DHT.read11(DHT11PIN);
 }
 
 void loop() {
+  //Serial.print("loop");
+  Serial.print(state);
   // put your main code here, to run repeatedly:
   tact = millis(); //Refresh always actual time
   getnextstate();
-  Serial.print(state);
-  Serial.print(state);
   switch(state)
   {
     
@@ -73,7 +78,7 @@ void loop() {
         if(state!=nextstate)
         {
           state = nextstate;
-          openservo(true);
+          openservo(1);
           poweronfan(false);
           tini = millis();
         }
@@ -85,7 +90,7 @@ void loop() {
         if(state!=nextstate)
         {
           state = nextstate;
-          openservo(false);
+          openservo(0);
           poweronfan(true);
           tini = millis();
         }
@@ -97,7 +102,7 @@ void loop() {
         if(state!=nextstate)
         {
           state = nextstate;
-          openservo(false);
+          openservo(0);
           poweronfan(true);
           tini = millis();
         }
@@ -109,7 +114,7 @@ void loop() {
         if(state!=nextstate)
         {
           state = nextstate;
-          openservo(false);
+          openservo(0);
           poweronfan(false);
           tini = millis();
         }
@@ -167,24 +172,36 @@ void gettemperature()
 }
 
 //Open/Close water pump
-void openservo(bool openservo)
+void openservo(int intopenservo)
 {
-  if(openservo)
+ 
+  if(intopenservo==1)
   {
-      servo.write(SERVOOPENEDANGLE);
-      delay(15*SERVOCLOSEDEANGLE);
+    Serial.println("SERVOOPENEDANGLE");
+    servo.write(SERVOOPENEDANGLE);
+    delay(15*SERVOCLOSEDEANGLE);
   }
   else
   {
-      servo.write(SERVOCLOSEDEANGLE);
-      delay(15*SERVOCLOSEDEANGLE);
+    Serial.println("SERVOCLOSEDEANGLE");
+    servo.write(SERVOCLOSEDEANGLE);
+    delay(15*SERVOCLOSEDEANGLE);
   }
 }
 
 //Power ON Fan
 void poweronfan(bool powerfan)
 {
-  
+  if(powerfan)
+  {
+    digitalWrite(FANPIN1,HIGH);
+    digitalWrite(FANPIN2,LOW);
+  }else
+  {
+    digitalWrite(FANPIN1,LOW);
+    digitalWrite(FANPIN2,LOW);
+  }
+  delay(200);
 }
 
 //Prints data to LCD
