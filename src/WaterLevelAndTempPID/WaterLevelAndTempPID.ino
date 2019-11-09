@@ -1,6 +1,7 @@
 #include <Servo.h>
 #include <dht.h>
 #include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
 #define TRINGPIN 9
 #define ECHOPIN 10
@@ -20,6 +21,13 @@ int counterprint = 0;
 Servo servo;
 int angle =0;
 dht DHT;
+LiquidCrystal_I2C lcd(0x27,20,4);
+int tini = 0;
+int tact = 0;
+float temperature = 0;
+float humidity = 0;
+int angleservo;
+
 
 void setup()
 {
@@ -33,6 +41,9 @@ void setup()
   delay(200);
   pinMode(IN1,OUTPUT);
   pinMode(IN2,OUTPUT);
+  lcd.init();
+  lcd.backlight();
+  tini = millis();
 }
 
 void loop()
@@ -48,21 +59,27 @@ void loop()
   duration = pulseIn(ECHOPIN, HIGH);
   // Calculating the distance
   distance= duration*0.034/2;
-  Serial.println(distance);
   if(distance<MINDISTANCE)
   {
-    servo.write(SERVOCLOSE);
+    angleservo = SERVOCLOSE;
+    servo.write(angleservo);
+    delay(200);
+  }else
+  {
+    angleservo = SERVOOPEN;
+    servo.write(angleservo);
     delay(200);
   }
   int chk = DHT.read11(DHT11PIN);
-  if(DHT.temperature >0 && DHT.humidity >0)
+  temperature = DHT.temperature;
+  humidity = DHT.humidity;
+  if(DHT.temperature >0 && humidity >0)
   {
     
-    if(DHT.temperature>MAXTEMPERATURE)
+    if(temperature>MAXTEMPERATURE)
     {
-      Serial.println(DHT.temperature);
-      digitalWrite(IN1,HIGH);
-      digitalWrite(IN2,LOW);
+      digitalWrite(IN1,LOW);
+      digitalWrite(IN2,HIGH);
       delay(200);
     }else{
       digitalWrite(IN1,LOW);
@@ -70,5 +87,29 @@ void loop()
       delay(200);
     }
   }
-
+  
+  tact = millis();
+  
+  lcd.setCursor(4,0);
+  lcd.print("T:");
+  lcd.setCursor(6,0);
+  lcd.print(temperature);
+  lcd.setCursor(0,1);
+  lcd.print("H:");
+  lcd.setCursor(2,1);
+  lcd.print(humidity);
+  lcd.setCursor(9,1);
+  lcd.print("H:");
+  lcd.setCursor(11,1);
+  lcd.print(distance);
+  lcd.setCursor(15,1);
+  delay(1000);
+  Serial.print(tact);
+  Serial.print(",");
+  Serial.print(angleservo);
+  Serial.print(",");
+  Serial.print(temperature);
+  Serial.print(",");
+  Serial.print(distance);
+  Serial.println();
 }
